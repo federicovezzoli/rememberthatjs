@@ -1,0 +1,26 @@
+<div id="category-archive-template">
+  	<div class="panel panel-info">
+		<div class="panel-heading">Category archive for: </div>
+			<table class="table striped">
+	  		<thead>
+	  			<tr>
+	  				<th>Name</th>
+	  				<th>Description</th>
+	  				<th>Category</th>
+	  			</tr>
+	  			
+	  		</thead>
+	  		<tbody>
+	  			<% _.each(elements, function(element){ %>
+	 	 			<tr>
+	  					<td><%= element.title %></td>
+	  					<td><%= element.content %></td>
+	  					<td><% _.each(element.taxonomies.category, function(category){ %>
+	  								<a href="<%= category.slug %>" class="btn-category btn btn-primary btn-xs"><%= category.name %></a>
+	  						<%	}); %></td>
+	  				</tr>
+	  			<% }); %>
+	  		</tbody>
+	  	</table>
+	</div> 
+</div>
