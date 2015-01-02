@@ -17,12 +17,8 @@ rememberthatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/libraries', {
-        templateUrl: 'partials/phone-list.html',
+        templateUrl: 'partials/library-list.html',
         controller: 'RememberthatCtrl'
-      }).
-      when('/library/:libraryID', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'RememberthatDetailCtrl'
       }).
       otherwise({
         redirectTo: '/libraries'
