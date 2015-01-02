@@ -4,8 +4,9 @@
 
 var rememberthatApp = angular.module('rememberthatApp', [
   'ngRoute',
-  'phonecatAnimations',
+  'ngSanitize',
 
+  'rememberthatAnimations',
   'rememberthatControllers',
   'phonecatFilters',
   'rememberthatServices'
@@ -15,16 +16,16 @@ rememberthatApp.config(['$routeProvider',
 
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
+      when('/libraries', {
         templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+        controller: 'RememberthatCtrl'
       }).
-      when('/phones/:phoneId', {
+      when('/library/:libraryID', {
         templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+        controller: 'RememberthatDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/libraries'
       });
 
   }
