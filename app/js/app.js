@@ -8,7 +8,7 @@ var rememberthatApp = angular.module('rememberthatApp', [
 
   'rememberthatAnimations',
   'rememberthatControllers',
-  'phonecatFilters',
+  //'phonecatFilters',
   'rememberthatServices'
 ]);
 
