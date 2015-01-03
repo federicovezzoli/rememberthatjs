@@ -5,10 +5,10 @@
 var rememberthatServices = angular.module('rememberthatServices', ['ngResource']);
 
 //Entries
-rememberthatServices.factory('Phone', ['$resource',
+rememberthatServices.factory('Entry', ['$resource',
   function($resource){
-    return $resource('http://rememberthatjs:8888/wp/wp-json/posts/:libraryID', {}, {
-    	query: {method:'GET', params:{'type':'library'}, isArray:true}
+    return $resource('http://rememberthatjs:8888/wp/wp-json/posts/', {}, {
+    	query: {method:'GET', params:{'type':'library','page': ':page'}, isArray:true}
     });
   }]) ;
 

@@ -1,16 +1,38 @@
 <!--Body content-->
 
 <ul class="libraries">
-  <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="phone panel panel-default">
+  <li ng-repeat="entry in entries | filter:query | orderBy:orderProp" class="phone panel panel-default">
   	<div class="panel-heading">
   		<a href="#/library/{{phone.ID}}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-down"></span></a>
-  		<h2 class="panel-title">{{phone.title}}</h2>
+  		<h2 class="panel-title">{{entry.title}}</h2>
   	</div>
   	<div class="panel-body">
       	<ul>
-    			<li ng-repeat="category in phone.terms.category"><a href="{{category.link}}" class="btn btn-primary">{{category.name}}</a></li>
+    			<li ng-repeat="category in entry.terms.category"><a href="{{category.link}}" class="btn btn-primary">{{category.name}}</a></li>
     		</ul>
-  	<div ng-bind-html="phone.content"></div>
+  	<div ng-bind-html="entry.content"></div>
     </div>
   </li>
 </ul>
+
+<div class="paginationWrap">
+	Total Articles: {{totalArticles}}
+	Total Pages: {{totalPages}}
+	<ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</div>
