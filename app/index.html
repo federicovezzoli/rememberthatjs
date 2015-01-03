@@ -22,8 +22,33 @@
 <body>
 
   <div class="view-container">
-    <div ng-view class="view-frame"></div>
-  </div>
+    <div class="view-frame">
+	    <div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<!--Sidebar content-->
+
+					Search: <input ng-model="query">
+					Sort by:
+					<select ng-model="orderProp">
+						<option value="name">Alphabetical</option>
+						<option value="age">Newest</option>
+					</select>
+
+					<div ng-controller="RememberthatCategories">
+						<h4>Archived by:</h4>
+						<div class="list-group">
+							<a href="" ng-repeat="cat in categories" class="list-group-item"><span class="badge">{{cat.count}}</span>{{cat.name}}</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-10" ng-view>
+
+				</div>
+			</div>
+	    </div>
+    </div>
+   </div>
 
 </body>
 </html>

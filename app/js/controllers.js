@@ -8,4 +8,10 @@ var rememberthatControllers = angular.module('rememberthatControllers', []);
 rememberthatControllers.controller('RememberthatCtrl', ['$scope', 'Phone',
   function($scope, Phone) {
     $scope.phones = Phone.query();
-  }]);
+ }]);
+
+ //retrieve the categories
+ rememberthatControllers.controller('RememberthatCategories', ['$scope', 'Category',
+  function($scope, Category) {
+    $scope.categories = Category.query();
+ }]);
