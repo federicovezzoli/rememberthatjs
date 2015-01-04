@@ -1,9 +1,8 @@
 <!--Body content-->
-
 <ul class="libraries">
   <li ng-repeat="entry in entries | filter:query | orderBy:orderProp" class="phone panel panel-default">
   	<div class="panel-heading">
-  		<a href="#/library/{{phone.ID}}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-down"></span></a>
+  		{{entry.ID}}<a href="#/library/{{phone.ID}}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-down"></span></a>
   		<h2 class="panel-title">{{entry.title}}</h2>
   	</div>
   	<div class="panel-body">
@@ -15,6 +14,7 @@
   </li>
 </ul>
 
+<!-- pagination -->
 <div class="paginationWrap">
 	Total Articles: {{totalArticles}}
 	Total Pages: {{totalPages}}
@@ -24,11 +24,11 @@
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
+    <li ng-repeat=""><a ng-click="updatePagination(1)">1</a></li>
+    <li><a ng-click="updatePagination(2)">2</a></li>
+    <li><a ng-click="updatePagination(3)">3</a></li>
+    <li><a ng-click="updatePagination(4)">4</a></li>
+    <li><a ng-click="updatePagination(5)">5</a></li>
     <li>
       <a href="#" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
