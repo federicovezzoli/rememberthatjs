@@ -1,0 +1,25 @@
+<!--Body content-->
+<div class="page-header">
+	<h2 ng-hide="archiveTerm">{{archiveTitle}}</h2>
+	<h2 ng-show="archiveTerm">Archive: {{archiveTerm.name}}</h2>
+</div>
+<!-- pagination -->
+<pagination boundary-links="true" max-size="10" items-per-page="10" total-items="totalArticles" ng-model="currentPage" ng-change="printResults()" class="pull-right clearfix"></pagination>
+
+<ul class="libraries">
+  <li ng-repeat="entry in entries | filter:query | orderBy:orderProp" class="phone panel panel-default">
+  	<div class="panel-heading clearfix">
+  		<!-- <a href="#/library/{{phone.ID}}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-down"></span></a> -->
+  		<h2 class="panel-title pull-left"><span class="glyphicon glyphicon-bookmark"></span>{{entry.title}}</h2>
+  		<ul class="pull-right cat-list">
+    		<li ng-repeat="category in entry.terms.category"><a href="{{category.link}}" class="btn btn-primary btn-sm">{{category.name}}</a></li>
+    	</ul>
+  	</div>
+  	<div class="panel-body">
+		<div ng-bind-html="entry.content"></div>
+    </div>
+  </li>
+</ul>
+
+<!-- pagination -->
+<pagination boundary-links="true" max-size="10" items-per-page="10" total-items="totalArticles" ng-model="currentPage" ng-change="printResults()" class="pull-right clearfix"></pagination>

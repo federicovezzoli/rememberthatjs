@@ -5,6 +5,7 @@
 var rememberthatApp = angular.module('rememberthatApp', [
   'ngRoute',
   'ngSanitize',
+  'ui.bootstrap',
 
   'rememberthatAnimations',
   'rememberthatControllers',
@@ -17,8 +18,12 @@ rememberthatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/libraries', {
-        templateUrl: 'partials/library-list.html',
+        templateUrl: 'template/library-list.html',
         controller: 'RememberthatCtrl'
+      }).
+      when('/category/:catid', {
+        templateUrl: 'template/library-list.html',
+        controller: 'RememberthatCtrlCat'
       }).
       otherwise({
         redirectTo: '/libraries'
